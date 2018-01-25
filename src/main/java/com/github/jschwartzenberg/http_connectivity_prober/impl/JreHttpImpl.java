@@ -13,9 +13,7 @@ public class JreHttpImpl implements SimpleHttpClientInterface {
 
 	public String get(String url) throws IOException {
 		URLConnection connection = new URL(url).openConnection();
-        String string = CharStreams.toString(new InputStreamReader(connection.getInputStream(), "UTF-8"));
-        connection.connect();
-		return string;
+		return CharStreams.toString(new InputStreamReader(connection.getInputStream(), "UTF-8"));
 	}
 
 }
